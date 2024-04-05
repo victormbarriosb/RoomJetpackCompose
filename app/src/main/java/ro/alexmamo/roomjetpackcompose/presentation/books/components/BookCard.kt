@@ -36,7 +36,9 @@ fun BookCard(
             modifier = Modifier.fillMaxWidth().padding(12.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Column {
+            Column(
+                modifier = Modifier.weight(1f)
+            ) {
                 TextTitle(
                     bookTitle = book.title
                 )
@@ -44,12 +46,12 @@ fun BookCard(
                     bookAuthor = book.author
                 )
             }
-            Spacer(
-                modifier = Modifier.weight(1f)
-            )
-            DeleteIcon(
-                deleteBook = deleteBook
-            )
+            Spacer(modifier = Modifier.width(8.dp))
+            Box(modifier = Modifier.size(24.dp)) {
+                DeleteIcon(
+                    deleteBook = deleteBook
+                )
+            }
         }
     }
 }
